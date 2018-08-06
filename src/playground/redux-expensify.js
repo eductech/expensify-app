@@ -1,7 +1,7 @@
 
 
-const expenseOne = store.dispatch(addExpense({ desctiption: 'Rent', amount: 100, createdAt: 30000 }));
-const expenseTwo = store.dispatch(addExpense({ desctiption: 'Caffee', amount: 300, createdAt: 100000 }));
+const expenseOne = store.dispatch(addExpense({ description: 'Rent', amount: 100, createdAt: 30000 }));
+const expenseTwo = store.dispatch(addExpense({ description: 'Caffee', amount: 300, createdAt: 100000 }));
 
 // store.dispatch(removeExpense({ id: expenseOne.expense.id }));
 
