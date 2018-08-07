@@ -7,14 +7,7 @@ const configureStore = () => createStore(
   combineReducers({
     expenses: expensesReducer,
     filters: filtersReducer
-  })
+  }), window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
 export default configureStore;
-
-// store.subscribe(() => {
-//   const state = store.getState();
-//   const visibleExpenses = getVisibleExpenses(state.expenses, state.filters);
-//   console.log(visibleExpenses);
-// });
-
