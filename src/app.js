@@ -15,6 +15,9 @@ import getVisibleExpenses from './selectors/expenses';
 import 'normalize.css/normalize.css';
 import './styles/styles.scss'; 
 
+// testing database
+import './firebase/firebase';
+
 const store = configureStore();
 
 store.dispatch(addExpense({description: 'Water Bill', amount: 4500 }));
