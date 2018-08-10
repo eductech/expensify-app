@@ -11,8 +11,29 @@ const config = {
 
 firebase.initializeApp(config);
 
-firebase.database().ref().set({
-  name: 'viqa_vika'
-});
+const database = firebase.database();
 
-console.log('hhhh');
+// database.ref().once();
+
+// database.ref().set({
+//   name: 'viqa_vika',
+//   isSingle: false,
+//   age: 1,
+//   location: {
+//     country: 'Belarus',
+//     city: 'Brest'
+//   }
+// }).then(() => {
+//   console.log('data is saved');
+// }).catch((e) => {
+//   console.log(e);
+// });
+
+// // database.ref().set('this is my data');
+
+// // database.ref('age').set('viqa');
+// // database.ref('location/city').set('New York');
+
+// database.ref('attributes').set({ height: 188, weight: 88 });
+
+// database.ref('attributes').remove();
