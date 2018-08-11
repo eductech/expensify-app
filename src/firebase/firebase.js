@@ -13,7 +13,27 @@ firebase.initializeApp(config);
 
 const database = firebase.database();
 
-// database.ref().once();
+database.ref().on('value', (snapshot) => {
+  const data = snapshot.val();
+  console.log(`${data.name} is ${data.age}`);
+});
+
+setTimeout(() => {
+  database.ref().update({
+    age: 15
+  })
+}, 3255);
+
+// database.ref('location')
+//   .once('value')
+//   .then((snapshot) => {
+//     console.log(snapshot);
+//     const val = snapshot.val();
+//     console.log(val);
+//   })
+//   .catch((e) => {
+//     console.log(e, 'error from fatching');
+//   });
 
 // database.ref().set({
 //   name: 'viqa_vika',
