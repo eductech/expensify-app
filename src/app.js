@@ -7,8 +7,7 @@ import AppRouter from './routers/AppRouter';
 
 //redux
 import configureStore from './store/configureStore';
-import { addExpense, editExpense, removeExpense } from './actions/expenses';
-import { setEndDate, setStartDate, setTextFilter, sortByAmount, sortByDate } from './actions/filters';
+import { addExpense } from './actions/expenses';
 import getVisibleExpenses from './selectors/expenses';
 
 //styles
@@ -20,9 +19,9 @@ import './firebase/firebase';
 
 const store = configureStore();
 
-store.dispatch(addExpense({description: 'Water Bill', amount: 4500 }));
-store.dispatch(addExpense({description: 'Rent', amount: 109500 }));
-store.dispatch(addExpense({description: 'Gaz Bill', createdAt: 1000}));
+// store.dispatch(addExpense({description: 'Water Bill', amount: 4500 }));
+// store.dispatch(addExpense({description: 'Rent', amount: 109500 }));
+// store.dispatch(addExpense({description: 'Gaz Bill', createdAt: 1000}));
 
 const state = store.getState();
 const visibleState = getVisibleExpenses(state.expenses, state.filters); 
