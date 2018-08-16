@@ -2,3 +2,5 @@ node_modules/
 public/dist/
 yarn.lock
 yarn-error.log
+.env.development
+.env.test
