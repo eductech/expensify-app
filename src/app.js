@@ -7,26 +7,17 @@ import AppRouter from './routers/AppRouter';
 
 //redux
 import configureStore from './store/configureStore';
-import { addExpense } from './actions/expenses';
-import getVisibleExpenses from './selectors/expenses';
+import { stertSetExpenses, startSetExpenses } from "./actions/expenses";
 
 //styles
 import 'normalize.css/normalize.css';
 import './styles/styles.scss'; 
 import 'react-dates/lib/css/_datepicker.css';
 
-// testing database
+// firebase
 import './firebase/firebase';
 
 const store = configureStore();
-
-// store.dispatch(addExpense({description: 'Water Bill', amount: 4500 }));
-// store.dispatch(addExpense({description: 'Rent', amount: 109500 }));
-// store.dispatch(addExpense({description: 'Gaz Bill', createdAt: 1000}));
-
-const state = store.getState();
-const visibleState = getVisibleExpenses(state.expenses, state.filters); 
-console.log(visibleState);
 
 const jsx = (
   <Provider store={store}>
@@ -34,5 +25,8 @@ const jsx = (
   </Provider>
 );
 
+ReactDOM.render(<p>Loading...</p>, document.getElementById('app'));
 
-ReactDOM.render(jsx, document.getElementById('app'));
+store.dispatch(startSetExpenses()).then(() => {
+  ReactDOM.render(jsx, document.getElementById('app'));
+});
